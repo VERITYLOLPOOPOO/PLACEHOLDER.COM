@@ -3,30 +3,192 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Placeholder account prototype for language, region, and Pico updates." />
+  <meta name="description" content="Placeholder account prototype with register, login, and profile pictures." />
   <title>Placeholder Account</title>
   <style>
-    :root{--bg:#0a0b0e;--panel:#13161c;--text:#f5f7fb;--muted:#9ca5b3;--line:#292e38;--a:#8b5cf6;--b:#22d3ee;--max:760px}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,rgba(34,211,238,.13),transparent 30%),radial-gradient(circle at 10% 20%,rgba(139,92,246,.16),transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5}.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}.top{height:70px;border-bottom:1px solid var(--line);display:flex;align-items:center}.topin{display:flex;align-items:center;justify-content:space-between}.brand{display:inline-block;background:#fff200;color:#111;border:3px solid #111;padding:4px 8px;font-family:"Comic Sans MS","Arial Black",sans-serif;font-size:24px;font-weight:900;letter-spacing:-1px;line-height:1;text-transform:uppercase;transform:rotate(-1deg);box-shadow:4px 4px 0 #ff3b30}a{color:inherit;text-decoration:none}.btn{border:1px solid var(--line);background:#171a21;color:var(--text);padding:11px 15px;border-radius:12px;font-weight:700;cursor:pointer}.primary{background:linear-gradient(135deg,var(--a),#6d5dfc);border-color:transparent}main{padding:72px 0}.eyebrow{color:var(--b);font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:800}h1{font-size:clamp(44px,8vw,72px);letter-spacing:-3px;line-height:1;margin:12px 0 18px}.lead{color:var(--muted);font-size:18px}.panel{margin-top:28px;padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#181b22,var(--panel))}.form{display:grid;gap:14px}.field{display:grid;gap:6px}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#0d1015;color:var(--text)}.notice{font-size:13px;color:var(--muted)}.profile{display:none;gap:10px}.profile.active{display:grid}.row{padding:12px;border-radius:12px;background:#0e1117;border:1px solid var(--line)}.row small{display:block;color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}footer{padding:30px 0;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:540px){.brand{font-size:20px}}
+    :root{--bg:#0a0b0e;--panel:#13161c;--text:#f5f7fb;--muted:#9ca5b3;--line:#292e38;--max:760px}
+    *{box-sizing:border-box}body{margin:0;background:#0a0b0e;color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;background:#0a0b0e}.topin{display:flex;align-items:center;justify-content:space-between}.brand{font-size:27px;font-weight:600;letter-spacing:-1.4px}a{color:inherit;text-decoration:none}.back{font-size:14px;color:#d8dde6}.back:hover{color:white}main{padding:62px 0 80px}h1{font-size:clamp(42px,8vw,68px);letter-spacing:-3px;line-height:1;margin:10px 0 16px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#aab2bf}.lead{color:var(--muted);font-size:18px;margin-bottom:28px}.panel{padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.panel h2{margin:0 0 20px;font-size:28px;letter-spacing:-1px}.form{display:grid;gap:14px}.field{display:grid;gap:6px}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px 13px;border-radius:8px;border:1px solid #343a46;background:#0c0f14;color:var(--text);font:inherit}.field input:focus,.field select:focus{outline:2px solid #9da7b8;outline-offset:1px}.btn{border:1px solid #4a515f;background:#191d25;color:var(--text);padding:11px 15px;border-radius:8px;font-weight:700;cursor:pointer;font:inherit}.btn.primary{background:#f4f6f8;color:#101216;border-color:#f4f6f8}.btn.danger{border-color:#644;color:#ffd7d7}.switch{margin:16px 0 0;color:var(--muted);font-size:14px}.switch button{border:0;background:none;color:#fff;text-decoration:underline;cursor:pointer;padding:0;font:inherit}.notice{font-size:12px;color:#8f98a6;margin-top:12px}.error{display:none;background:#321b1d;border:1px solid #63363b;color:#ffd8db;padding:10px 12px;border-radius:8px;font-size:13px}.error.show{display:block}.avatar-pick{display:flex;align-items:center;gap:16px}.avatar-preview,.profile-avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid #4d5563;background:#222831}.avatar-pick input{max-width:100%;font-size:13px}.hidden{display:none!important}.profile-head{display:flex;gap:18px;align-items:center;margin-bottom:22px}.profile-head h2{margin:0 0 3px}.profile-head p{margin:0;color:var(--muted)}.rows{display:grid;gap:10px}.row{padding:12px;border-radius:8px;background:#0e1117;border:1px solid var(--line)}.row small{display:block;color:var(--muted);margin-bottom:2px}.profile-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.edit-panel{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}footer{padding:26px 0 40px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}@media(max-width:540px){.brand{font-size:23px}.panel{padding:20px}.avatar-pick{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
-  <div class="top"><div class="wrap topin"><a class="brand" href="../">PLACEHOLDER</a><a class="btn" href="../">Back to site</a></div></div>
-  <main><div class="wrap"><div class="eyebrow">Placeholder account</div><h1>Your little corner of Placeholder.</h1><p class="lead">This is the account prototype. It remembers your display name, email, language, region, and Pico interest in this browser.</p>
-    <div class="panel" id="setup"><h2>Create or update your local profile</h2><div class="form"><div class="field"><label for="name">Display name</label><input id="name" placeholder="Your name" /></div><div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" /></div><div class="field"><label for="language">Language</label><select id="language"><option>English</option><option>العربية</option><option>Français</option><option>Español</option></select></div><div class="field"><label for="region">Region</label><select id="region"><option>North Africa</option><option>Europe</option><option>North America</option><option>Asia-Pacific</option></select></div><div class="field"><label><input id="pico" type="checkbox" /> Follow Pico updates</label></div><button class="btn primary" id="save">Save profile</button><div class="notice">Prototype only: this data is stored locally in your browser, not on a server. Do not use this as a real secure account system yet.</div></div></div>
-    <div class="panel profile" id="profile"><h2>Signed in locally</h2><div class="row"><small>Name</small><strong id="pName"></strong></div><div class="row"><small>Email</small><strong id="pEmail"></strong></div><div class="row"><small>Language</small><strong id="pLanguage"></strong></div><div class="row"><small>Region</small><strong id="pRegion"></strong></div><div class="row"><small>Pico updates</small><strong id="pPico"></strong></div><div class="actions"><button class="btn" id="edit">Edit profile</button><button class="btn" id="clear">Sign out</button></div></div>
+  <div class="top"><div class="wrap topin"><a class="brand" href="../">Placeholder</a><a class="back" href="../">Back to site</a></div></div>
+  <main><div class="wrap">
+    <div class="eyebrow">Placeholder account</div>
+    <h1>Sign in to Placeholder.</h1>
+    <p class="lead">Create a local account, log back in, and keep a profile picture on this browser.</p>
+
+    <section class="panel" id="registerPanel">
+      <h2>Register</h2>
+      <div class="form">
+        <div class="avatar-pick">
+          <img class="avatar-preview" id="registerPreview" alt="Profile picture preview" />
+          <div class="field" style="flex:1"><label for="registerAvatar">Profile picture</label><input id="registerAvatar" type="file" accept="image/*" /><span class="notice">Optional. If you skip it, Placeholder makes a simple initials avatar.</span></div>
+        </div>
+        <div class="field"><label for="registerName">Display name</label><input id="registerName" autocomplete="nickname" placeholder="Your name" /></div>
+        <div class="field"><label for="registerEmail">Email</label><input id="registerEmail" type="email" autocomplete="email" placeholder="you@example.com" /></div>
+        <div class="field"><label for="registerPassword">Password</label><input id="registerPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters" /></div>
+        <div class="field"><label for="registerLanguage">Language</label><select id="registerLanguage"><option>English</option><option>العربية</option><option>Français</option><option>Español</option></select></div>
+        <div class="field"><label for="registerRegion">Region</label><select id="registerRegion"><option>North Africa</option><option>Europe</option><option>North America</option><option>Asia-Pacific</option></select></div>
+        <label><input id="registerPico" type="checkbox" /> Follow Pico updates</label>
+        <div class="error" id="registerError"></div>
+        <button class="btn primary" id="registerButton" type="button">Create account</button>
+      </div>
+      <p class="switch">Already have an account? <button id="showLogin" type="button">Log in.</button></p>
+      <p class="notice">Prototype only: this account exists only in this browser. Do not use a password you use anywhere else.</p>
+    </section>
+
+    <section class="panel hidden" id="loginPanel">
+      <h2>Log in</h2>
+      <div class="form">
+        <div class="field"><label for="loginEmail">Email</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" /></div>
+        <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Password" /></div>
+        <div class="error" id="loginError"></div>
+        <button class="btn primary" id="loginButton" type="button">Log in</button>
+      </div>
+      <p class="switch">Don't have an account? <button id="showRegister" type="button">Register.</button></p>
+      <p class="notice">These are local prototype accounts, not server-backed Placeholder accounts yet.</p>
+    </section>
+
+    <section class="panel hidden" id="profilePanel">
+      <div class="profile-head"><img class="profile-avatar" id="profileAvatar" alt="Profile picture" /><div><h2 id="profileName"></h2><p id="profileEmail"></p></div></div>
+      <div class="rows"><div class="row"><small>Language</small><strong id="profileLanguage"></strong></div><div class="row"><small>Region</small><strong id="profileRegion"></strong></div><div class="row"><small>Pico updates</small><strong id="profilePico"></strong></div></div>
+      <div class="profile-actions"><button class="btn" id="editButton" type="button">Edit profile</button><button class="btn danger" id="logoutButton" type="button">Sign out</button></div>
+      <div class="edit-panel hidden" id="editPanel">
+        <div class="form">
+          <div class="avatar-pick"><img class="avatar-preview" id="editPreview" alt="New profile picture preview" /><div class="field" style="flex:1"><label for="editAvatar">Change profile picture</label><input id="editAvatar" type="file" accept="image/*" /></div></div>
+          <div class="field"><label for="editName">Display name</label><input id="editName" /></div>
+          <div class="field"><label for="editLanguage">Language</label><select id="editLanguage"><option>English</option><option>العربية</option><option>Français</option><option>Español</option></select></div>
+          <div class="field"><label for="editRegion">Region</label><select id="editRegion"><option>North Africa</option><option>Europe</option><option>North America</option><option>Asia-Pacific</option></select></div>
+          <label><input id="editPico" type="checkbox" /> Follow Pico updates</label>
+          <div class="error" id="editError"></div>
+          <div class="profile-actions"><button class="btn primary" id="saveEdit" type="button">Save changes</button><button class="btn" id="cancelEdit" type="button">Cancel</button></div>
+        </div>
+      </div>
+    </section>
   </div></main>
-  <footer><div class="wrap">Placeholder account prototype. Real server-backed accounts can replace this later.</div></footer>
+  <footer><div class="wrap">Placeholder account prototype. Real cross-device accounts need a server/database later.</div></footer>
+
+  <script src="../auth.js"></script>
   <script>
-    const key='placeholder-account-v1';
-    const setup=document.getElementById('setup');
-    const profile=document.getElementById('profile');
-    const fields={name:document.getElementById('name'),email:document.getElementById('email'),language:document.getElementById('language'),region:document.getElementById('region'),pico:document.getElementById('pico')};
-    function render(data){if(!data){setup.style.display='block';profile.classList.remove('active');return;}setup.style.display='none';profile.classList.add('active');document.getElementById('pName').textContent=data.name||'—';document.getElementById('pEmail').textContent=data.email||'—';document.getElementById('pLanguage').textContent=data.language||'English';document.getElementById('pRegion').textContent=data.region||'—';document.getElementById('pPico').textContent=data.pico?'Following':'Not following';}
-    function load(){try{return JSON.parse(localStorage.getItem(key));}catch{return null;}}
-    const existing=load();if(existing){fields.name.value=existing.name||'';fields.email.value=existing.email||'';fields.language.value=existing.language||'English';fields.region.value=existing.region||'North Africa';fields.pico.checked=!!existing.pico;}render(existing);
-    document.getElementById('save').addEventListener('click',()=>{const data={name:fields.name.value.trim(),email:fields.email.value.trim(),language:fields.language.value,region:fields.region.value,pico:fields.pico.checked};localStorage.setItem(key,JSON.stringify(data));render(data);});
-    document.getElementById('edit').addEventListener('click',()=>{profile.classList.remove('active');setup.style.display='block';});
-    document.getElementById('clear').addEventListener('click',()=>{localStorage.removeItem(key);fields.name.value='';fields.email.value='';fields.pico.checked=false;render(null);});
+    const $ = id => document.getElementById(id);
+    const registerPanel = $('registerPanel');
+    const loginPanel = $('loginPanel');
+    const profilePanel = $('profilePanel');
+    let registerAvatarData = '';
+    let editAvatarData = '';
+
+    function showError(id, message) {
+      const box = $(id);
+      box.textContent = message || '';
+      box.classList.toggle('show', !!message);
+    }
+
+    function showRegister() {
+      registerPanel.classList.remove('hidden');
+      loginPanel.classList.add('hidden');
+      profilePanel.classList.add('hidden');
+      showError('registerError', '');
+    }
+
+    function showLogin() {
+      registerPanel.classList.add('hidden');
+      loginPanel.classList.remove('hidden');
+      profilePanel.classList.add('hidden');
+      showError('loginError', '');
+    }
+
+    function renderProfile() {
+      const user = PlaceholderAuth.currentUser();
+      if (!user) return showRegister();
+      registerPanel.classList.add('hidden');
+      loginPanel.classList.add('hidden');
+      profilePanel.classList.remove('hidden');
+      $('profileAvatar').src = user.avatar || PlaceholderAuth.makeDefaultAvatar(user.name);
+      $('profileName').textContent = user.name;
+      $('profileEmail').textContent = user.email;
+      $('profileLanguage').textContent = user.language || 'English';
+      $('profileRegion').textContent = user.region || '—';
+      $('profilePico').textContent = user.pico ? 'Following' : 'Not following';
+      $('editPreview').src = user.avatar || PlaceholderAuth.makeDefaultAvatar(user.name);
+      $('editName').value = user.name || '';
+      $('editLanguage').value = user.language || 'English';
+      $('editRegion').value = user.region || 'North Africa';
+      $('editPico').checked = !!user.pico;
+      $('editPanel').classList.add('hidden');
+    }
+
+    $('registerPreview').src = PlaceholderAuth.makeDefaultAvatar('P');
+
+    const oldProfile = (() => { try { return JSON.parse(localStorage.getItem('placeholder-account-v1')); } catch { return null; } })();
+    if (oldProfile && !PlaceholderAuth.currentUser()) {
+      $('registerName').value = oldProfile.name || '';
+      $('registerEmail').value = oldProfile.email || '';
+      $('registerLanguage').value = oldProfile.language || 'English';
+      $('registerRegion').value = oldProfile.region || 'North Africa';
+      $('registerPico').checked = !!oldProfile.pico;
+    }
+
+    $('showLogin').addEventListener('click', showLogin);
+    $('showRegister').addEventListener('click', showRegister);
+
+    $('registerAvatar').addEventListener('change', async event => {
+      try {
+        registerAvatarData = await PlaceholderAuth.resizeAvatar(event.target.files[0]);
+        if (registerAvatarData) $('registerPreview').src = registerAvatarData;
+        showError('registerError', '');
+      } catch (error) { showError('registerError', error.message); }
+    });
+
+    $('registerButton').addEventListener('click', async () => {
+      try {
+        showError('registerError', '');
+        await PlaceholderAuth.register({
+          name: $('registerName').value,
+          email: $('registerEmail').value,
+          password: $('registerPassword').value,
+          avatar: registerAvatarData,
+          language: $('registerLanguage').value,
+          region: $('registerRegion').value,
+          pico: $('registerPico').checked
+        });
+        $('registerPassword').value = '';
+        renderProfile();
+      } catch (error) { showError('registerError', error.message); }
+    });
+
+    $('loginButton').addEventListener('click', async () => {
+      try {
+        showError('loginError', '');
+        await PlaceholderAuth.login($('loginEmail').value, $('loginPassword').value);
+        $('loginPassword').value = '';
+        renderProfile();
+      } catch (error) { showError('loginError', error.message); }
+    });
+
+    $('logoutButton').addEventListener('click', () => {
+      PlaceholderAuth.logout();
+      showLogin();
+    });
+
+    $('editButton').addEventListener('click', () => $('editPanel').classList.remove('hidden'));
+    $('cancelEdit').addEventListener('click', () => { editAvatarData = ''; $('editPanel').classList.add('hidden'); });
+    $('editAvatar').addEventListener('change', async event => {
+      try {
+        editAvatarData = await PlaceholderAuth.resizeAvatar(event.target.files[0]);
+        if (editAvatarData) $('editPreview').src = editAvatarData;
+        showError('editError', '');
+      } catch (error) { showError('editError', error.message); }
+    });
+    $('saveEdit').addEventListener('click', () => {
+      const name = $('editName').value.trim();
+      if (!name) return showError('editError', 'Display name is required.');
+      PlaceholderAuth.updateCurrentUser({ name, avatar: editAvatarData || PlaceholderAuth.currentUser().avatar, language: $('editLanguage').value, region: $('editRegion').value, pico: $('editPico').checked });
+      editAvatarData = '';
+      showError('editError', '');
+      renderProfile();
+    });
+
+    if (PlaceholderAuth.currentUser()) renderProfile(); else showRegister();
   </script>
 </body>
 </html>
