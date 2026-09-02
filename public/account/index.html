@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Placeholder account prototype with register, login, and profile pictures." />
+  <meta name="description" content="Placeholder account prototype with register, login, profile pictures, and language preferences." />
   <title>Placeholder Account</title>
   <style>
     :root{--bg:#0a0b0e;--panel:#13161c;--text:#f5f7fb;--muted:#9ca5b3;--line:#292e38;--max:760px}
-    *{box-sizing:border-box}body{margin:0;background:#0a0b0e;color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;background:#0a0b0e}.topin{display:flex;align-items:center;justify-content:space-between}.brand{font-size:27px;font-weight:600;letter-spacing:-1.4px}a{color:inherit;text-decoration:none}.back{font-size:14px;color:#d8dde6}.back:hover{color:white}main{padding:62px 0 80px}h1{font-size:clamp(42px,8vw,68px);letter-spacing:-3px;line-height:1;margin:10px 0 16px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#aab2bf}.lead{color:var(--muted);font-size:18px;margin-bottom:28px}.panel{padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.panel h2{margin:0 0 20px;font-size:28px;letter-spacing:-1px}.form{display:grid;gap:14px}.field{display:grid;gap:6px}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px 13px;border-radius:8px;border:1px solid #343a46;background:#0c0f14;color:var(--text);font:inherit}.field input:focus,.field select:focus{outline:2px solid #9da7b8;outline-offset:1px}.btn{border:1px solid #4a515f;background:#191d25;color:var(--text);padding:11px 15px;border-radius:8px;font-weight:700;cursor:pointer;font:inherit}.btn.primary{background:#f4f6f8;color:#101216;border-color:#f4f6f8}.btn.danger{border-color:#644;color:#ffd7d7}.switch{margin:16px 0 0;color:var(--muted);font-size:14px}.switch button{border:0;background:none;color:#fff;text-decoration:underline;cursor:pointer;padding:0;font:inherit}.notice{font-size:12px;color:#8f98a6;margin-top:12px}.error{display:none;background:#321b1d;border:1px solid #63363b;color:#ffd8db;padding:10px 12px;border-radius:8px;font-size:13px}.error.show{display:block}.avatar-pick{display:flex;align-items:center;gap:16px}.avatar-preview,.profile-avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid #4d5563;background:#222831}.avatar-pick input{max-width:100%;font-size:13px}.hidden{display:none!important}.profile-head{display:flex;gap:18px;align-items:center;margin-bottom:22px}.profile-head h2{margin:0 0 3px}.profile-head p{margin:0;color:var(--muted)}.rows{display:grid;gap:10px}.row{padding:12px;border-radius:8px;background:#0e1117;border:1px solid var(--line)}.row small{display:block;color:var(--muted);margin-bottom:2px}.profile-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.edit-panel{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}footer{padding:26px 0 40px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}@media(max-width:540px){.brand{font-size:23px}.panel{padding:20px}.avatar-pick{align-items:flex-start;flex-direction:column}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}.wrap{width:min(var(--max),calc(100% - 32px));margin:auto}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center}.topin{display:flex;align-items:center;justify-content:space-between}.brand{font-size:27px;font-weight:600;letter-spacing:-1.4px}a{color:inherit;text-decoration:none}.back{font-size:14px;color:#d8dde6}.back:hover{color:#fff}main{padding:62px 0 80px}h1{font-size:clamp(42px,8vw,68px);letter-spacing:-3px;line-height:1;margin:10px 0 16px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#aab2bf}.lead{color:var(--muted);font-size:18px;margin-bottom:28px}.panel{padding:26px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}.panel h2{margin:0 0 20px;font-size:28px;letter-spacing:-1px}.form{display:grid;gap:14px}.field{display:grid;gap:6px}.field label{font-size:13px;font-weight:700}.field input,.field select{width:100%;padding:12px 13px;border-radius:8px;border:1px solid #343a46;background:#0c0f14;color:var(--text);font:inherit}.field input:focus,.field select:focus{outline:2px solid #9da7b8;outline-offset:1px}.btn{border:1px solid #4a515f;background:#191d25;color:var(--text);padding:11px 15px;border-radius:8px;font-weight:700;cursor:pointer;font:inherit}.btn.primary{background:#f4f6f8;color:#101216;border-color:#f4f6f8}.btn.danger{border-color:#644;color:#ffd7d7}.switch{margin:16px 0 0;color:var(--muted);font-size:14px}.switch button{border:0;background:none;color:#fff;text-decoration:underline;cursor:pointer;padding:0;font:inherit}.notice{font-size:12px;color:#8f98a6;margin-top:12px}.error{display:none;background:#321b1d;border:1px solid #63363b;color:#ffd8db;padding:10px 12px;border-radius:8px;font-size:13px}.error.show{display:block}.avatar-pick{display:flex;align-items:center;gap:16px}.avatar-preview,.profile-avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:1px solid #4d5563;background:#222831}.avatar-pick input{max-width:100%;font-size:13px}.hidden{display:none!important}.profile-head{display:flex;gap:18px;align-items:center;margin-bottom:22px}.profile-head h2{margin:0 0 3px}.profile-head p{margin:0;color:var(--muted)}.rows{display:grid;gap:10px}.row{padding:12px;border-radius:8px;background:#0e1117;border:1px solid var(--line)}.row small{display:block;color:var(--muted);margin-bottom:2px}.profile-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.edit-panel{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}footer{padding:26px 0 40px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}@media(max-width:540px){.brand{font-size:23px}.panel{padding:20px}.avatar-pick{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body>
@@ -15,7 +15,7 @@
   <main><div class="wrap">
     <div class="eyebrow">Placeholder account</div>
     <h1>Sign in to Placeholder.</h1>
-    <p class="lead">Create a local account, log back in, and keep a profile picture on this browser.</p>
+    <p class="lead">Create a local account, log back in, choose your language, and keep a profile picture on this browser.</p>
 
     <section class="panel" id="registerPanel">
       <h2>Register</h2>
@@ -27,9 +27,9 @@
         <div class="field"><label for="registerName">Display name</label><input id="registerName" autocomplete="nickname" placeholder="Your name" /></div>
         <div class="field"><label for="registerEmail">Email</label><input id="registerEmail" type="email" autocomplete="email" placeholder="you@example.com" /></div>
         <div class="field"><label for="registerPassword">Password</label><input id="registerPassword" type="password" autocomplete="new-password" placeholder="At least 6 characters" /></div>
-        <div class="field"><label for="registerLanguage">Language</label><select id="registerLanguage"><option>English</option><option>العربية</option><option>Français</option><option>Español</option></select></div>
-        <div class="field"><label for="registerRegion">Region</label><select id="registerRegion"><option>North Africa</option><option>Europe</option><option>North America</option><option>Asia-Pacific</option></select></div>
-        <label><input id="registerPico" type="checkbox" /> Follow Pico updates</label>
+        <div class="field"><label for="registerLanguage">Language</label><select id="registerLanguage">
+          <option>English</option><option>العربية</option><option>ⵜⴰⵎⴰⵣⵉⵖⵜ</option><option>Français</option><option>Español</option><option>Português</option><option>Deutsch</option><option>Italiano</option><option>Nederlands</option><option>Polski</option><option>Türkçe</option><option>Русский</option><option>Українська</option><option>Ελληνικά</option><option>Română</option><option>Čeština</option><option>Svenska</option><option>Norsk</option><option>Dansk</option><option>Suomi</option><option>فارسی</option><option>עברית</option><option>اردو</option><option>हिन्दी</option><option>বাংলা</option><option>தமிழ்</option><option>中文（简体）</option><option>中文（繁體）</option><option>日本語</option><option>한국어</option><option>Bahasa Indonesia</option><option>Bahasa Melayu</option><option>Tiếng Việt</option><option>ไทย</option><option>Kiswahili</option><option>አማርኛ</option><option>Yorùbá</option>
+        </select></div>
         <div class="error" id="registerError"></div>
         <button class="btn primary" id="registerButton" type="button">Create account</button>
       </div>
@@ -51,15 +51,15 @@
 
     <section class="panel hidden" id="profilePanel">
       <div class="profile-head"><img class="profile-avatar" id="profileAvatar" alt="Profile picture" /><div><h2 id="profileName"></h2><p id="profileEmail"></p></div></div>
-      <div class="rows"><div class="row"><small>Language</small><strong id="profileLanguage"></strong></div><div class="row"><small>Region</small><strong id="profileRegion"></strong></div><div class="row"><small>Pico updates</small><strong id="profilePico"></strong></div></div>
+      <div class="rows"><div class="row"><small>Language</small><strong id="profileLanguage"></strong></div></div>
       <div class="profile-actions"><button class="btn" id="editButton" type="button">Edit profile</button><button class="btn danger" id="logoutButton" type="button">Sign out</button></div>
       <div class="edit-panel hidden" id="editPanel">
         <div class="form">
           <div class="avatar-pick"><img class="avatar-preview" id="editPreview" alt="New profile picture preview" /><div class="field" style="flex:1"><label for="editAvatar">Change profile picture</label><input id="editAvatar" type="file" accept="image/*" /></div></div>
           <div class="field"><label for="editName">Display name</label><input id="editName" /></div>
-          <div class="field"><label for="editLanguage">Language</label><select id="editLanguage"><option>English</option><option>العربية</option><option>Français</option><option>Español</option></select></div>
-          <div class="field"><label for="editRegion">Region</label><select id="editRegion"><option>North Africa</option><option>Europe</option><option>North America</option><option>Asia-Pacific</option></select></div>
-          <label><input id="editPico" type="checkbox" /> Follow Pico updates</label>
+          <div class="field"><label for="editLanguage">Language</label><select id="editLanguage">
+            <option>English</option><option>العربية</option><option>ⵜⴰⵎⴰⵣⵉⵖⵜ</option><option>Français</option><option>Español</option><option>Português</option><option>Deutsch</option><option>Italiano</option><option>Nederlands</option><option>Polski</option><option>Türkçe</option><option>Русский</option><option>Українська</option><option>Ελληνικά</option><option>Română</option><option>Čeština</option><option>Svenska</option><option>Norsk</option><option>Dansk</option><option>Suomi</option><option>فارسی</option><option>עברית</option><option>اردو</option><option>हिन्दी</option><option>বাংলা</option><option>தமிழ்</option><option>中文（简体）</option><option>中文（繁體）</option><option>日本語</option><option>한국어</option><option>Bahasa Indonesia</option><option>Bahasa Melayu</option><option>Tiếng Việt</option><option>ไทย</option><option>Kiswahili</option><option>አማርኛ</option><option>Yorùbá</option>
+          </select></div>
           <div class="error" id="editError"></div>
           <div class="profile-actions"><button class="btn primary" id="saveEdit" type="button">Save changes</button><button class="btn" id="cancelEdit" type="button">Cancel</button></div>
         </div>
@@ -107,13 +107,9 @@
       $('profileName').textContent = user.name;
       $('profileEmail').textContent = user.email;
       $('profileLanguage').textContent = user.language || 'English';
-      $('profileRegion').textContent = user.region || '—';
-      $('profilePico').textContent = user.pico ? 'Following' : 'Not following';
       $('editPreview').src = user.avatar || PlaceholderAuth.makeDefaultAvatar(user.name);
       $('editName').value = user.name || '';
       $('editLanguage').value = user.language || 'English';
-      $('editRegion').value = user.region || 'North Africa';
-      $('editPico').checked = !!user.pico;
       $('editPanel').classList.add('hidden');
     }
 
@@ -124,8 +120,6 @@
       $('registerName').value = oldProfile.name || '';
       $('registerEmail').value = oldProfile.email || '';
       $('registerLanguage').value = oldProfile.language || 'English';
-      $('registerRegion').value = oldProfile.region || 'North Africa';
-      $('registerPico').checked = !!oldProfile.pico;
     }
 
     $('showLogin').addEventListener('click', showLogin);
@@ -147,9 +141,7 @@
           email: $('registerEmail').value,
           password: $('registerPassword').value,
           avatar: registerAvatarData,
-          language: $('registerLanguage').value,
-          region: $('registerRegion').value,
-          pico: $('registerPico').checked
+          language: $('registerLanguage').value
         });
         $('registerPassword').value = '';
         renderProfile();
@@ -182,7 +174,7 @@
     $('saveEdit').addEventListener('click', () => {
       const name = $('editName').value.trim();
       if (!name) return showError('editError', 'Display name is required.');
-      PlaceholderAuth.updateCurrentUser({ name, avatar: editAvatarData || PlaceholderAuth.currentUser().avatar, language: $('editLanguage').value, region: $('editRegion').value, pico: $('editPico').checked });
+      PlaceholderAuth.updateCurrentUser({ name, avatar: editAvatarData || PlaceholderAuth.currentUser().avatar, language: $('editLanguage').value });
       editAvatarData = '';
       showError('editError', '');
       renderProfile();
