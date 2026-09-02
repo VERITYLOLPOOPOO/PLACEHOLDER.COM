@@ -32,7 +32,7 @@
 
   function makeDefaultAvatar(name) {
     const initial = (name || 'P').trim().charAt(0).toUpperCase().replace(/[<>&"']/g, '') || 'P';
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><rect width="160" height="160" fill="#222831"/><circle cx="80" cy="80" r="70" fill="#f4f4f4"/><text x="80" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="72" font-weight="700" fill="#111820">${initial}</text></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><rect width="160" height="160" fill="#20242b"/><circle cx="80" cy="80" r="70" fill="#f4f4f4"/><text x="80" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="72" font-weight="700" fill="#111820">${initial}</text></svg>`;
     return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
   }
 
@@ -63,7 +63,7 @@
     });
   }
 
-  async function register({ name, email, password, avatar, language, region, pico }) {
+  async function register({ name, email, password, avatar, language }) {
     name = name.trim();
     email = email.trim().toLowerCase();
     if (!name || !email || !password) throw new Error('Name, email, and password are required.');
@@ -80,8 +80,6 @@
       hash,
       avatar: avatar || makeDefaultAvatar(name),
       language: language || 'English',
-      region: region || 'North Africa',
-      pico: !!pico,
       createdAt: new Date().toISOString()
     };
     users.push(user);
